@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+:root {
+  --primary-color-book: #ececec;
+  --secondary-color-book: #9fd3c7;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  height: auto;
+  margin: 20px;
+}
+
+.book {
+  width: 250px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--primary-color-book);
+  border: 2px solid var(--secondary-color-book);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.author {
+  font-style: italic;
+}
