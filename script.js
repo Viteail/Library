@@ -4,8 +4,14 @@ const inputAuthor = document.querySelector("#author");
 const inputPages = document.querySelector("#page");
 const inputRead = document.querySelector("#read");
 const cardsWrapper = document.querySelector(".books");
+const addBookBtn = document.querySelector(".addbookbtn");
+const modal = document.querySelector(".modal");
+const cancelBtn = document.querySelector("#cancel");
 
-submitBtn.addEventListener("click", () => addBookToLibrary());
+submitBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  return addBookToLibrary();
+});
 
 let myLibrary = [];
 
@@ -26,6 +32,11 @@ function addBookToLibrary() {
   myLibrary.push(newBook);
   console.log(myLibrary);
   displayBook();
+
+  inputTitle.value = "";
+  inputAuthor.value = "";
+  inputPages.value = "";
+  inputRead.value = "";
 }
 
 function displayBook() {
@@ -53,3 +64,17 @@ function displayBook() {
     paraRead.textContent = book.read;
   });
 }
+
+addBookBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+cancelBtn.addEventListener('click', () => {
+  modal.style.display = "none";
+})
