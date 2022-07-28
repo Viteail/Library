@@ -33,10 +33,7 @@ function addBookToLibrary() {
   console.log(myLibrary);
   displayBook();
 
-  inputTitle.value = "";
-  inputAuthor.value = "";
-  inputPages.value = "";
-  inputRead.value = "";
+  deleteInputValues();
 }
 
 function displayBook() {
@@ -72,9 +69,18 @@ addBookBtn.addEventListener("click", () => {
 window.addEventListener('click', (e) => {
   if (e.target == modal) {
     modal.style.display = "none";
+    deleteInputValues();
   }
 });
 
 cancelBtn.addEventListener('click', () => {
   modal.style.display = "none";
+  deleteInputValues();
 })
+
+function deleteInputValues() {
+  inputTitle.value = "";
+  inputAuthor.value = "";
+  inputPages.value = "";
+  inputRead.value = "";
+};
