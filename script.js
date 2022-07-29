@@ -55,11 +55,15 @@ function displayBook() {
   removeBtn.textContent = "Remove";
   removeBtn.classList.add("removebtn");
 
-  readBtn.addEventListener('click', () => {
-    readBtn.classList.toggle('read');
-    if (readBtn.classList.contains('read')) {
+  readBtn.addEventListener("click", () => {
+    readBtn.classList.toggle("read");
+    if (readBtn.classList.contains("read")) {
       readBtn.textContent = "Read";
     } else readBtn.textContent = "Not read";
+  });
+
+  removeBtn.addEventListener("click", () => {
+    card.remove();
   });
 
   cardsWrapper.appendChild(card);
